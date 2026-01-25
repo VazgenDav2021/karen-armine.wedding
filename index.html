@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="hy">
+
+<head>
+    <title>Արմինե և Կարեն</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body>
+
+    <div id="welcome-overlay"
+        class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white dark:bg-background transition-opacity duration-1000">
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-10 left-10 w-32 h-32 border border-gray-300/30 rounded-full"></div>
+            <div class="absolute bottom-20 right-10 w-48 h-48 border border-gray-400/20 rounded-full"></div>
+            <div class="absolute top-1/3 right-20 w-16 h-16 border border-gray-400/40 rounded-full"></div>
+        </div>
+        <div class="relative text-center px-6 max-w-lg z-10">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 animate-fade-in-delay">
+                Հարսանյաց հրավեր
+            </h1>
+            <div class="w-24 h-1 bg-pink-200 mx-auto mb-10 animate-fade-in-delay"></div>
+            <p class="text-lg text-gray-600 mb-10 animate-fade-in-delay-2">
+                7 մարտի 2026
+            </p>
+            <button id="enter-btn"
+                class="animate-fade-in-delay-2 px-8 py-4 text-lg tracking-wide border border-pink-400 rounded-lg bg-white text-pink-600 hover:bg-pink-50 hover:scale-105 transition-all duration-300 shadow-md">
+                Դիտել հրավերը
+            </button>
+        </div>
+    </div>
+
+
+    <audio id="wedding-music" src="assets/music.mp3"></audio>
+
+    <div id="site-content" class="hidden">
+        <section class="relative h-screen w-full overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="assets/hero-wedding.jpg" alt="Հարսանեկան հրավեր" class="h-full w-full object-cover" />
+                <div class="absolute inset-0 bg-background/40"></div>
+            </div>
+
+            <div class="relative flex h-full flex-col items-center justify-center px-4 text-center">
+                <p class="wedding-subheading mb-6 animate-fade-in">
+                    Մենք ուրախ ենք հրավիրել ձեզ
+                </p>
+
+                <h1 class="wedding-heading text-4xl md:text-6xl lg:text-7xl mb-8 animate-fade-in-delay">
+                    Մենք ձեզ հրավիրում ենք <br /> հարսանիքի
+                </h1>
+
+                <div class="wedding-divider animate-fade-in-delay"></div>
+
+                <p class="wedding-heading text-2xl md:text-3xl lg:text-4xl mt-6 animate-fade-in-delay-2">
+                    7 մարտի 2026
+                </p>
+            </div>
+
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+                <div class="w-px h-12 bg-foreground/30"></div>
+            </div>
+        </section>
+
+        <section id="countdown" class="py-16 bg-secondary/30">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-10">
+                    <p class="wedding-subheading mb-4">
+                        Մեր հարսանիքին մնացել է
+                    </p>
+                    <div class="wedding-divider"></div>
+                </div>
+
+                <div id="countdown-blocks" class="flex justify-center gap-4 md:gap-8 max-w-2xl mx-auto"></div>
+            </div>
+        </section>
+
+        <section class="wedding-section bg-secondary/30">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <p class="wedding-subheading mb-4">Մեր պատմությունը</p>
+                    <h2 class="wedding-heading text-3xl md:text-4xl">
+                        Արմինե և Կարեն
+                    </h2>
+                    <div class="wedding-divider"></div>
+                </div>
+
+                <div class="max-w-6xl mx-auto">
+                    <div class="grid grid-cols-12 gap-3 md:gap-4">
+                        <div class="col-span-12 md:col-span-7 row-span-2 overflow-hidden rounded-sm">
+                            <img src="assets/couple-1.jpeg" alt="Նորապսակներ"
+                                class="w-full h-64 md:h-[500px] object-cover hover:scale-105 transition-transform duration-700" />
+                        </div>
+
+                        <div class="col-span-6 md:col-span-5 overflow-hidden rounded-sm">
+                            <img src="assets/couple-2.jpeg" alt="Հարսնացու"
+                                class="w-full h-40 md:h-60 object-cover hover:scale-105 transition-transform duration-700" />
+                        </div>
+
+                        <div class="col-span-6 md:col-span-5 overflow-hidden rounded-sm">
+                            <img src="assets/couple-3.jpeg" alt="Փեսացու"
+                                class="w-full h-40 md:h-56 object-cover hover:scale-105 transition-transform duration-700" />
+                        </div>
+
+                        <div class="col-span-12 overflow-hidden rounded-sm">
+                            <img src="assets/couple-4.jpeg" alt="Նորապսակներ"
+                                class="w-full h-48 md:h-72 object-cover object-[center_bottom] hover:scale-105 transition-transform duration-700" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="wedding-section">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="wedding-heading text-3xl md:text-4xl">
+                        Օրվա ծրագիրը
+                    </h2>
+                    <div class="wedding-divider"></div>
+                </div>
+
+                <div class="flex flex-col gap-6 max-w-2xl mx-auto">
+                    <div class="wedding-card text-center py-8 px-6">
+
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-sparkles w-9 h-9 text-primary">
+                                <path
+                                    d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z">
+                                </path>
+                                <path d="M20 3v4"></path>
+                                <path d="M22 5h-4"></path>
+                                <path d="M4 17v2"></path>
+                                <path d="M5 18H3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="wedding-heading text-2xl md:text-3xl mb-4">
+                            Տոնակատարության սկիզբ
+                        </h3>
+                        <p class="wedding-body text-lg text-muted-foreground mb-6">
+                            Հյուրերի հավաք և ողջույնի ֆուրշետ
+                        </p>
+                        <span class="wedding-heading text-xl md:text-2xl">
+                            12:00
+                        </span>
+                        <p class="wedding-body text-base md:text-lg text-muted-foreground mt-2">
+                            ք. Մոսկվա, Ծաղկային փող., 15
+                        </p>
+                    </div>
+
+                    <div class="wedding-card text-center py-8 px-6">
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-church w-9 h-9 text-primary">
+                                <path d="M10 9h4"></path>
+                                <path d="M12 7v5"></path>
+                                <path d="M14 22v-4a2 2 0 0 0-4 0v4"></path>
+                                <path
+                                    d="M18 22V5.618a1 1 0 0 0-.553-.894l-4.553-2.277a2 2 0 0 0-1.788 0L6.553 4.724A1 1 0 0 0 6 5.618V22">
+                                </path>
+                                <path
+                                    d="m18 7 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.618a1 1 0 0 1 .553-.894L6 7">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="wedding-heading text-2xl md:text-3xl mb-4">
+                            Պսակադրություն
+                        </h3>
+                        <p class="wedding-body text-lg text-muted-foreground mb-6">
+                            Պսակադրության արարողություն
+                        </p>
+                        <span class="wedding-heading text-xl md:text-2xl">
+                            13:00
+                        </span>
+                        <p class="wedding-body text-base md:text-lg text-muted-foreground mt-2">
+                            Քրիստոս Փրկչի Տաճար, ք. Մոսկվա
+                        </p>
+                    </div>
+
+                    <div class="wedding-card text-center py-8 px-6">
+
+                        <div
+                            class="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-party-popper w-9 h-9 text-primary">
+                                <path d="M5.8 11.3 2 22l10.7-3.79"></path>
+                                <path d="M4 3h.01"></path>
+                                <path d="M22 8h.01"></path>
+                                <path d="M15 2h.01"></path>
+                                <path d="M22 20h.01"></path>
+                                <path
+                                    d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10">
+                                </path>
+                                <path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17"></path>
+                                <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7"></path>
+                                <path
+                                    d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="wedding-heading text-2xl md:text-3xl mb-4">
+                            Բանկետային սրահ
+                        </h3>
+                        <p class="wedding-body text-lg text-muted-foreground mb-6">
+                            Տոնական բանկետ և հանդիսավոր ընթրիք
+                        </p>
+                        <span class="wedding-heading text-xl md:text-2xl">
+                            15:00
+                        </span>
+                        <p class="wedding-body text-base md:text-lg text-muted-foreground mt-2">
+                            «Սպիտակ Վարդ» ռեստորան, Սադովայա փ., 42
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="./enter.js"></script>
+    <script src="./countdown.js"></script>
+</body>
+
+</html>
